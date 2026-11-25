@@ -309,9 +309,9 @@ input[type=range]{width:100%;margin:0;accent-color:#c27f42;height:32px}
     <section class="tab" id="tab-pesquisar">
       <div class="book">
         <h2>Grimório de Pesquisa</h2>
-        <p>Pergunte ao livro por um tema, um signo ou um caminho.</p>
+        <p>Pergunte ao livro sobre astrologia, magia, rituais, crenças e religiões.</p>
         <form id="searchForm" style="display:grid;gap:8px" novalidate>
-          <input class="field" id="q" type="search" placeholder="prosperidade, intuição…" aria-label="Termo de pesquisa" enterkeyhint="search">
+          <input class="field" id="q" type="search" placeholder="signo, mapa astral, tarô…" aria-label="Termo de pesquisa" enterkeyhint="search">
           <button class="btn" type="submit">Pesquisar</button>
         </form>
         <label class="small" style="color:#4a2810;display:flex;gap:8px;align-items:center;justify-content:center">
@@ -472,7 +472,33 @@ const GLOSS = [
  {t:'Mapa astral',k:['mapa astral','mapa natal','carta natal','casas'],x:'Fotografia do céu no momento do nascimento, com posições de Sol, Lua, planetas, ascendente e as 12 casas (áreas da vida). Exige data, hora e local exatos.'},
  {t:'432 Hz e 528 Hz',k:['432','528','frequencia','hz','solfeggio'],x:'Frequências populares em músicas de meditação. 432 Hz é associada à sensação de harmonia; 528 Hz, à "renovação" na tradição Solfeggio. São usos culturais e de relaxamento — não há comprovação científica de efeitos especiais.'},
  {t:'Gratidão',k:['gratidao','agradecer','agradecimento'],x:'Prática diária de reconhecer três coisas boas. Ajuda a perceber a prosperidade já presente e combina com o compromisso deste app.'},
- {t:'Lua nova e cheia',k:['lua nova','lua cheia','fases da lua','fase'],x:'Lua nova: plantar intenções. Crescente: agir. Cheia: colher e celebrar. Minguante: soltar e limpar. Muitas pessoas alinham rituais e metas a esse ciclo.'}
+ {t:'Lua nova e cheia',k:['lua nova','lua cheia','fases da lua','fase da lua','lua crescente','lua minguante'],x:'Lua nova: plantar intenções. Crescente: agir. Cheia: colher e celebrar. Minguante: soltar e limpar. Muitas pessoas alinham rituais e metas a esse ciclo.'},
+ {t:'Zodíaco',k:['zodiaco','zodiacal','constelacao','constelacoes','roda zodiacal'],x:'Faixa do céu por onde o Sol, a Lua e os planetas parecem caminhar, dividida pela astrologia ocidental em 12 signos de 30° cada, começando em Áries no equinócio de março. Os signos levam o nome das constelações que estavam nessa faixa na Antiguidade.'},
+ {t:'Horóscopo',k:['horoscopo','previsao','previsoes'],x:'Originalmente, o mapa do céu de um momento (do grego "observar a hora"). Hoje o termo também designa as previsões por signo publicadas em jornais e apps, baseadas principalmente no signo solar e nos trânsitos do período.'},
+ {t:'Casas astrológicas',k:['casa','casas','casas astrologicas','meio do ceu','descendente','fundo do ceu'],x:'O mapa astral é dividido em 12 casas, cada uma ligada a uma área da vida: 1 identidade, 2 recursos, 3 comunicação, 4 lar, 5 criatividade, 6 rotina e saúde, 7 parcerias, 8 transformação, 9 filosofia e viagens, 10 carreira, 11 amizades e grupos, 12 inconsciente e espiritualidade.'},
+ {t:'Aspectos astrológicos',k:['aspecto','aspectos','conjuncao','oposicao','quadratura','trigono','sextil'],x:'Ângulos entre planetas no mapa. Conjunção (0°) une energias; sextil (60°) e trígono (120°) favorecem fluidez; quadratura (90°) e oposição (180°) trazem tensão que pede ação e equilíbrio.'},
+ {t:'Trânsitos e retorno de Saturno',k:['transito','transitos','retorno de saturno','revolucao solar'],x:'Trânsitos são as posições atuais dos planetas em relação ao mapa natal. O retorno de Saturno (por volta dos 29 e dos 58 anos) é tido como um marco de amadurecimento; a revolução solar é o mapa do aniversário, usado para o ano que começa.'},
+ {t:'Eclipses e nodos lunares',k:['eclipse','eclipses','nodo','nodos','nodo norte','nodo sul','lilith','lua negra'],x:'Eclipses acontecem perto dos nodos lunares, pontos onde a órbita da Lua cruza o caminho do Sol. Na astrologia, o nodo norte simboliza direção de crescimento e o nodo sul, padrões conhecidos. Lilith (Lua Negra) é um ponto ligado ao instinto e ao que é reprimido.'},
+ {t:'Decanatos',k:['decanato','decanatos','decano'],x:'Cada signo é dividido em três decanatos de 10°. Cada decanato recebe a influência secundária de outro signo do mesmo elemento, o que dá nuances diferentes a pessoas do mesmo signo solar.'},
+ {t:'Tarô',k:['taro','tarot','arcano','arcanos','cartas'],x:'Baralho de 78 cartas usado como oráculo e ferramenta de reflexão: 22 Arcanos Maiores (como O Louco, A Estrela, A Lua, O Sol) e 56 Arcanos Menores em quatro naipes, que a tradição esotérica associa aos quatro elementos: Paus (Fogo), Copas (Água), Espadas (Ar) e Ouros (Terra).'},
+ {t:'Numerologia',k:['numerologia','numero','numeros','caminho de vida','numero pessoal'],x:'Prática esotérica que atribui significados aos números. O "número do caminho de vida" é obtido somando os dígitos da data de nascimento até restar um algarismo (ou os números mestres 11, 22 e 33).'},
+ {t:'Ocultismo',k:['ocultismo','oculto','ocultista','ciencias ocultas'],x:'Conjunto de saberes que buscam o conhecimento "oculto" por trás das aparências: astrologia, alquimia, magia cerimonial, cabala, tarô e hermetismo. A palavra vem do latim occultus, escondido.'},
+ {t:'Misticismo e esoterismo',k:['misticismo','mistico','mistica','esoterismo','esoterico','espiritualidade'],x:'Misticismo é a busca da experiência direta com o sagrado ou o transcendente. Esoterismo designa ensinamentos reservados a iniciados, transmitidos por símbolos — de onde vêm muitas das tradições usadas na astrologia e no tarô.'},
+ {t:'Hermetismo e alquimia',k:['hermetismo','hermes trismegisto','alquimia','alquimista','caibalion','tabua de esmeralda'],x:'Tradição atribuída a Hermes Trismegisto, resumida em máximas como "o que está em cima é como o que está embaixo" — base da ideia de correspondência entre o céu e a vida humana. A alquimia usa a transformação dos metais como símbolo da transformação interior.'},
+ {t:'Cabala',k:['cabala','kabbalah','arvore da vida','sefirot'],x:'Tradição mística de origem judaica que descreve a criação pela Árvore da Vida, com 10 sefirot ligadas por 22 caminhos — associados no ocultismo ocidental aos 22 Arcanos Maiores do tarô e aos planetas e signos.'},
+ {t:'Chakras',k:['chakra','chakras','aura','energia vital'],x:'Na tradição indiana, centros de energia ao longo da coluna — do básico (raiz) ao coronário (topo da cabeça). Muitas práticas de meditação trabalham a atenção em cada chakra com respiração, cores e sons.'},
+ {t:'Cristais e pedras',k:['cristal','cristais','pedra','pedras','ametista','quartzo','obsidiana'],x:'Na tradição esotérica, cada signo tem pedras associadas (por exemplo, ametista para Peixes e Aquário, granada para Capricórnio). São usadas como amuletos e apoio simbólico em rituais e meditações.'},
+ {t:'Runas',k:['runa','runas','futhark'],x:'Alfabeto dos antigos povos germânicos (Futhark), usado também como oráculo: cada uma das 24 runas tem um nome e um significado simbólico.'},
+ {t:'Magia',k:['magia','magico','magica','feitico','feiticos','encantamento','bruxaria','bruxa','bruxo'],x:'Nas tradições esotéricas, magia é a prática de influenciar a realidade por meio da intenção, de símbolos, palavras e rituais. Vai da magia natural popular (ervas, velas, simpatias) à magia cerimonial dos grimórios europeus.'},
+ {t:'Wicca e a Roda do Ano',k:['wicca','wiccan','paganismo','pagao','roda do ano','samhain','beltane','sabbat','sabbats','yule','litha','ostara','imbolc','lammas','mabon'],x:'A Wicca é uma religião neopagã surgida na Inglaterra no século XX. Celebra a Roda do Ano com oito sabbats ligados às estações: Samhain, Yule, Imbolc, Ostara, Beltane, Litha, Lammas e Mabon. No Hemisfério Sul, muitos praticantes invertem as datas.'},
+ {t:'Orixás',k:['orixa','orixas','candomble','umbanda','iemanja','oxala','oxum','ogum','xango','iansa','oxossi','exu','nana'],x:'Divindades das religiões de matriz africana iorubá, como o Candomblé, e cultuadas também na Umbanda. Cada orixá está ligado a forças da natureza e a domínios da vida: Iemanjá ao mar, Oxum às águas doces e ao amor, Ogum ao ferro e aos caminhos, Xangô à justiça e aos raios, Oxalá à criação.'},
+ {t:'Espiritismo',k:['espiritismo','espirita','kardec','kardecismo','mediunidade','medium'],x:'Doutrina codificada por Allan Kardec na França do século XIX. Ensina a sobrevivência e a comunicação dos espíritos, a reencarnação e a evolução moral. É muito difundida no Brasil.'},
+ {t:'Budismo',k:['budismo','budista','buda','zen','nirvana','dharma','sangha','mantra'],x:'Tradição fundada por Siddhartha Gautama, o Buda, na Índia antiga. Ensina as Quatro Nobres Verdades e o Caminho Óctuplo para a libertação do sofrimento (nirvana). A meditação é central em escolas como o Zen e o budismo tibetano.'},
+ {t:'Hinduísmo',k:['hinduismo','hindu','vedas','veda','brahma','vishnu','shiva','krishna','ganesh','dharma','yoga','ioga'],x:'Conjunto de tradições religiosas da Índia baseadas nos Vedas. Tem divindades como Brahma, Vishnu e Shiva, e conceitos como karma, dharma e reencarnação. A astrologia védica (Jyotish) faz parte dessa tradição.'},
+ {t:'Religiões abraâmicas',k:['judaismo','cristianismo','islamismo','islam','abraamicas','biblia','tora','alcorao'],x:'Judaísmo, cristianismo e islamismo reconhecem Abraão como patriarca e creem em um Deus único. Seus textos sagrados são a Torá, a Bíblia e o Alcorão. Cada uma tem calendários rituais próprios, como o Shabat, a Páscoa e o Ramadã.'},
+ {t:'Xamanismo',k:['xamanismo','xama','xaman','paje','pajelanca','totem','animismo'],x:'Práticas de povos de várias regiões do mundo em que o xamã (o pajé, entre povos indígenas brasileiros) faz a ponte com o mundo dos espíritos para curar, orientar e proteger a comunidade, por meio de cantos, tambores e rituais.'},
+ {t:'Mitologias',k:['mitologia','mitologias','mito','mitos','grega','nordica','egipcia','odin','thor','zeus','isis','ra','lenda','lendas','folclore'],x:'Narrativas sagradas que explicam a origem do mundo e dos deuses. A mitologia greco-romana deu nome aos planetas e a muitos signos; a nórdica tem Odin, Thor e as runas; a egípcia, Ísis, Osíris e Rá. No Brasil, o folclore indígena e afro-brasileiro traz entidades como Iara e Saci.'},
+ {t:'Rituais pelo mundo',k:['ritual','rituais','cerimonia','cerimonias','festival','oferenda','oferendas','dia de muertos','diwali','ramada','ramadan','festa de iemanja'],x:'Rituais marcam passagens e ciclos em todas as culturas: o Dia de los Muertos no México honra os antepassados; o Diwali, festival hindu das luzes, celebra a vitória da luz; o Ramadã é o mês de jejum islâmico; no Brasil, a Festa de Iemanjá leva oferendas ao mar em 2 de fevereiro e no Réveillon.'}
 ];
 const ATTRS = [
   ['tudo','Todos'],['reg','Regente'],['el','Elemento'],['forcas','Pontos fortes'],['desafios','Desafios'],['prosp','Prosperidade'],['palavras','Palavras-chave'],['intu','Intuição']
@@ -655,24 +681,83 @@ function ddg(q){ // JSONP: a API Instant Answer não envia CORS
     document.head.appendChild(sc);
   }), 6000);
 }
+/* ---- Guardião do tema (rigoroso) ------------------------------------
+   O Grimório só aceita: astrologia, zodíaco, signos, magia, ocultismo,
+   misticismo, rituais do mundo todo, crenças, religiões e mitologias.
+   Regra: TODA palavra relevante da pesquisa precisa ser do tema ou
+   uma palavra neutra (como, significado, origem…). Comparação por início
+   de palavra, nunca por pedaço: "gastronomia" não passa por "astro". */
+const DOMINIO = ('astrolog astral  zodiac signo horoscop ascendent descendent planeta mercurio venus marte jupiter saturno urano netuno plutao '+
+ 'quiron lilith nodo eclips retrograd transito conjunc oposic quadratur  sextil decanat regent regenc cardina mutave constela '+
+ 'ocult esoter mistic misteri espirit   arcano cabal kabbal numerolog  runic alquim hermet caibalion '+
+ 'magia magico magica   bruxa bruxo bruxari feitic feiticeir encant wicca wiccan sabbat samhain beltane grimori oracul divina divinac '+
+ 'pentagram  amulet talism ritua mantra chakra  reiki cristal meditac meditar intuic prosper abundanc manifestac gratid sincronic '+
+ 'karma carma reencarn nirvana oniric solstic equinoc solfeggio frequenc '+
+ 'religi crenc crente deus deusa deuses deidad divindad sagrad    orix iemanja oxala   xango   oxossi  '+
+ 'candomble umband espiritism kardec xama xaman  pajelanc budis  budda  hindu krishna shiva vishnu ganesh brahma veda vedic yoga ioga '+
+ 'islam muculman alcorao  maome cristia catolic evangel protestan ortodox biblia biblic jesus cristo anjo anjos arcanjo demoni demonio diabo '+
+ 'inferno paraiso purgator judai judeu judaic  torah talmud xinto taois confucion paganis pagao  druid celtic   freya  '+
+ 'mitolog   lenda lendas folclor supersti benzede benzimento simpatia oferend  oracao oracoes  rezar   templo igreja '+
+ 'terreir sacerdot  profet profecia apocalips vodu voodoo santeria  cigan quiromanc cartomanc animis  fantasm assombr espectro '+
+ 'entidade entidades ressurreic peregrin jejum ramada ramadan diwali hanukk kwanzaa halloween finados sacrament batism iniciac cerimoni sacrific '+
+ 'xamanis vudu umbral obsessor   aruanda caboclo preto-velho erva ervas defumac incenso     gnose gnostic '+
+ 'rosacruz maconari templari illuminati cabalist hermetic tantra tantric   dervixe  dalai monge mosteir convento freira bencao abencoa').split(' ').filter(Boolean);
+const DOMINIO_PALAVRA = ['astro','astros','mago','magos','paga','pagas','mito','mitos','nana','lama','lamas','passe','passes','vela','velas','banho','banhos','ifa','exu','exus','tora','zen','thor','odin','loki','buda','sufi','sufis','pastor','aura','auras','trigono','trigonos','oxum','ogum','iansa','totem','totens','tarot','taro','runa','runas','sigilo','sigilos','culto','cultos','reza','rezas','prece','preces','santo','santa','santos','santas','paje','pajes','corao','runica','runicas','taros','tarots','fe','sol','lua','luas','ceu','fogo','terra','agua','ar','casa','casas','foco','energia','energias','pedra','pedras',
+ 'numero','numeros','carta','cartas','alma','almas','sonho','sonhos','maria','orar','deus','tao','fadas','fada','elfos','duende','duendes'];
+// palavras neutras: aceitas, mas sozinhas não bastam
+const NEUTRAS = ('a o as os um uma uns umas de do da dos das e ou em no na nos nas por pelo pela para pra com sem sobre entre ate que qual quais quem '+
+ 'como quando onde porque porque pq e eh ser sao foi tem ter ha mais menos muito muita meu minha meus minhas seu sua seus suas nosso nossa '+
+ 'signific histor origem origens simbol tradic cultur povo povos antig mundo mundial paises pais hoje dia dias mes ano anos semana noite cor cores '+
+ 'nome nomes tipo tipos lista principais principal fazer faz feito usar uso sorte amor trabalho dinheiro saude familia casamento compatib '+
+ 'caracterist personalidade homem homens mulher mulheres crianca pessoa pessoas vida morte mapa natal oficial brasil brasileir africa african '+
+ 'indigen oriental ocidental europ japon chines china india indian egito egipci grec grego grega roman nordic celta maia maya asteca inca tibet '+
+ 'arabe persa mesopotam babilon sumer hebrai bom boa melhor melhores forte positivo negativo grande pequeno guia protecao protetor proteger '+
+ 'cura curar limpeza limpar abrir caminhos pedido pedidos significado').split(' ').filter(Boolean);
+const STRONG = DOMINIO.filter(d => !['prosper','abundanc','meditac','meditar','gratid','cristal','frequenc','oniric','manifestac','intuic','erva','ervas','vela','velas','banho','banhos','passe','passes','pastor','lama','santa','santo','santos','culto','cultos','encant'].includes(d));
+const tokens = t => norm(t).split(/[^a-z0-9-]+/).filter(Boolean);
+const comeca = (w, lista) => lista.some(d => w.startsWith(d));
+// vocabulário do próprio app (traços dos signos, temas do glossário) também vale
+const VOCAB_APP = new Set([...SIGNS.flatMap(s => tokens([s.nome,s.el,s.mod,s.reg,s.cor,s.pedra,...s.forcas,...s.desafios,...s.palavras].join(' '))),
+  ...GLOSS.flatMap(g => g.k.flatMap(tokens))].filter(w => w.length>3));
+function analisa(qRaw){
+  let q = norm(qRaw);
+  GLOSS.forEach(g => g.k.filter(k=>k.includes(' ')).forEach(k => { if(q.includes(k)) q=q.replace(k,' tema ');})); // frases do glossário
+  const ws = tokens(q).filter(w => w!=='tema' || true);
+  let dominio = q.includes(' tema ') || q.trim()==='tema' ? 1 : 0; const fora=[];
+  for(const w of ws){
+    if(w==='tema') continue;
+    if(/^\d+$/.test(w) && !['432','528'].includes(w)) continue;
+    if(['432','528'].includes(w) || DOMINIO_PALAVRA.includes(w) || comeca(w,DOMINIO) || VOCAB_APP.has(w) || SIGNS.some(s=>norm(s.nome)===w)) { dominio++; continue; }
+    if(w.length<=2 || NEUTRAS.includes(w) || comeca(w, NEUTRAS.filter(n=>n.length>=5))) continue;
+    fora.push(w);
+  }
+  return {ok: dominio>0 && fora.length===0, fora};
+}
+// pergunta enviada à web sempre ancorada no tema
+const ancorar = q => tokens(q).some(w => comeca(w,STRONG) || SIGNS.some(s=>norm(s.nome)===w)) ? q : `${q} astrologia`;
 async function webSearch(q, n=3){
   if(!navigator.onLine) return [];
-  const all = await Promise.allSettled([wiki(q,n), ddg(q)]);
-  return all.flatMap(r => r.status==='fulfilled' ? r.value : []);
+  const qa = ancorar(q);
+  const all = await Promise.allSettled([wiki(qa,n+4), ddg(qa)]);
+  return all.flatMap(r => r.status==='fulfilled' ? r.value : [])
+    .filter(it => { // resultado precisa falar do universo astral, mágico ou religioso
+      const t=norm(it.t+' '+it.x); if(t.includes('pode referir-se')) return false;
+      const tk=tokens(it.t+' '+it.x); return tk.filter(w => comeca(w,STRONG)).length >= 2 || tokens(it.t).some(w=>comeca(w,STRONG)); })
+    .slice(0, n+1);
 }
 const resCard = it => `<div class="res"><span class="tag web">${esc(it.src)}</span><h3>${esc(it.t)}</h3><p>${esc(it.x)}</p>${it.url?`<a href="${esc(it.url)}" target="_blank" rel="noopener">Abrir fonte ↗</a>`:''}</div>`;
 
 /* =====================================================================
    6. ABA PESQUISAR (base local + web)
    ===================================================================== */
-const SUG = ['prosperidade','intuição','ascendente','foco','meditação','elementos','lua nova','Escorpião'];
+const SUG = ['mapa astral','ascendente','tarô','rituais de lua cheia','orixás','mitologia nórdica','budismo','Escorpião'];
 $('#sugChips').innerHTML = SUG.map(s=>`<button class="chip" type="button">${s}</button>`).join('');
 $('#sugChips').addEventListener('click', e => { const b=e.target.closest('.chip'); if(!b) return; $('#q').value=b.textContent; runSearch(); });
 $('#searchForm').addEventListener('submit', e => { e.preventDefault(); runSearch(); });
 
 function localSearch(qRaw){
   const q=norm(qRaw), out=[]; if(!q) return out;
-  const words=q.split(/\s+/).filter(w=>w.length>2);
+  const words=q.split(/\s+/).filter(w=>w.length>4);
   // 1) nome de signo => ficha completa
   SIGNS.filter(s => (q.length>2 && norm(s.nome).includes(q)) || q.includes(norm(s.nome))).forEach(s => out.push({score:10, html:
     `<div class="res"><span class="tag">BASE LOCAL · SIGNO</span><h3>${s.sim}&#xFE0E; ${s.nome} — ${s.el}, ${s.mod}, regido por ${esc(s.reg)}</h3>
@@ -688,13 +773,22 @@ function localSearch(qRaw){
 async function runSearch(){
   const qv=$('#q').value.trim(); const box=$('#results'); if(!qv){ $('#q').focus(); return; }
   const loc=localSearch(qv);
+  // pesquisa rigorosa: só o universo astral, mágico, ritual e religioso
+  const an = analisa(qv);
+  if(!an.ok){
+    const quais = an.fora.length ? ` (${an.fora.map(w=>'“'+esc(w)+'”').join(', ')})` : '';
+    box.innerHTML = `<div class="res"><span class="tag">GRIMÓRIO</span><h3>Este saber não pertence a estas páginas</h3>
+      <p>O Grimório guarda apenas astrologia, zodíaco e signos, magia e ocultismo, rituais do mundo todo, crenças, religiões e mitologias. Sua pesquisa traz termos fora desse caminho${quais}.</p>
+      <p class="small muted">Tente: mapa astral, ascendente, tarô, rituais de lua cheia, orixás, budismo, mitologia nórdica, Samhain ou o nome de um signo.</p></div>`;
+    box.scrollIntoView({behavior:'smooth',block:'start'}); return;
+  }
   box.innerHTML = (loc.length ? loc.map(r=>r.html).join('') : `<p class="note">Nada na base local para “${esc(qv)}”.</p>`)
     + ($('#useWeb').checked ? '<p class="note" id="webNote">Buscando também na web (Wikipédia e DuckDuckGo)…</p>' : '');
   box.scrollIntoView({behavior:'smooth',block:'start'});
   if(!$('#useWeb').checked) return;
   const web = await webSearch(qv, 3); const note=$('#webNote'); if(!note) return;
-  if(web.length){ note.insertAdjacentHTML('afterend', web.map(resCard).join('')); note.textContent=`Resultados da web para “${qv}”:`; }
-  else note.textContent = 'A busca na web não respondeu (sem conexão, bloqueio de CORS ou do ambiente). Os resultados acima são da base local.';
+  if(web.length){ note.insertAdjacentHTML('afterend', web.map(resCard).join('')); note.textContent=`Da web, só o que pertence a este universo, para “${qv}”:`; }
+  else note.textContent = 'A web não trouxe nada deste universo para o termo (ou está sem conexão). Os resultados acima são da base local.';
 }
 
 /* =====================================================================
