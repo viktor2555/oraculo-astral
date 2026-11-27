@@ -1,8 +1,8 @@
 /* Service worker do Oráculo Astral: guarda o app para abrir também sem internet.
    Estratégia: tenta a rede primeiro (pega sempre a versão nova do GitHub)
    e, se estiver offline, usa a cópia guardada. Troque VERSAO a cada atualização. */
-const VERSAO = 'oraculo-v1';
-const ARQUIVOS = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png'];
+const VERSAO = 'oraculo-v2';
+const ARQUIVOS = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './maskable-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSAO).then(c => c.addAll(ARQUIVOS)).then(() => self.skipWaiting()));
