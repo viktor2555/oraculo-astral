@@ -17,6 +17,10 @@ Aplicativo web místico de compromisso diário: descubra seu signo pela data de 
 | Arquivo | Para que serve |
 |---|---|
 | `index.html` | O aplicativo completo: HTML, CSS, JavaScript, imagens e vídeo embutidos |
+| `folder.html` | Folder de divulgação com botão para abrir a demo (link para compartilhar) |
+| `folder.jpg` | Imagem do folder, usada na prévia do link nas redes sociais |
+| `manifest.webmanifest`, `sw.js`, `icons/` | Tornam o app instalável e com funcionamento offline (PWA), necessário para a Play Store |
+| `privacidade.html` | Política de privacidade (exigida pela Play Store) |
 | `README.md` | Esta descrição |
 | `.nojekyll` | Faz o GitHub Pages publicar o site como está, sem processar com Jekyll |
 
